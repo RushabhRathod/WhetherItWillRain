@@ -2,6 +2,8 @@
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
 const forecat = document.querySelector("#forecast");
+const json = document.querySelector("#json");
+
 
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -12,7 +14,13 @@ weatherForm.addEventListener("submit", (e) => {
         if(data.error) {
             forecast.textContent = data.error;
         }else{
-            forecast.textContent = "The temprature is " + data.temperature + " and there is " + data.precipProbability + "% chance of raining.";
+            forecast.innerHTML = 
+             "There is " + data.precipProbability + "% chance of raining.<br>"  + 
+             "Right now, it is " + data.currentSummary + ".<br>" +
+             "There will be " + data.hourlySummary + ".<br>"  +
+             "For entire week, it might " + data.dailySummary + ".";
+            
+            //json.textContent = JSON.stringify(data.body,null, "\t");
         }
     });
 });

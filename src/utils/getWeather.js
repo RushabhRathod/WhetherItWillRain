@@ -14,10 +14,12 @@ const getWeather = async (lat, long) => {
                 }else if(body.error || body.code){
                     return reject(new Error("Error: " + body.error));
                 }else {
-                    console.log("The current temp is : " + body.currently.temperature + " and there is " + body.currently.precipProbability*100 + "% chances of rain");
                     return resolve({
+                        currentSummary: body.currently.summary,
+                        hourlySummary: body.hourly.summary,
+                        dailySummary: body.daily.summary,
                         temperature: body.currently.temperature,
-                        precipProbability: body.currently.precipProbability*100
+                        precipProbability: Math.round( body.currently.precipProbability*100)
                     });
                 }
             });

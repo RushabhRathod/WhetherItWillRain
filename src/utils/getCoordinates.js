@@ -10,7 +10,6 @@ const getCoordinates = async (address) => {
             }else if(body.features.length === 0) {
                 return reject(new Error("Error: INVALID PLACE "+ body.query[0]));
             }else if(body) {
-                console.log(body.features[0].place_name + " Long: ", body.features[0].center[0], " and lat: ", body.features[0].center[1]);
                 return resolve({
                     long: body.features[0].center[0],
                     lat: body.features[0].center[1]
