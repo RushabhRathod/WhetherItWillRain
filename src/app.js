@@ -57,7 +57,7 @@ app.get("/weather", async (req, res) => {
             error: forecast.error
         });
     }
-    return res.send(forecast);
+    return res.send(forecast);//redirect("/about");
         
 });
 
