@@ -105,6 +105,6 @@ app.use((req, res) => {
 // });
 
 app.listen(port, () => {
-    console.log("Server is lisiting at port " + port +.");
+    console.log("Server is lisiting at port " + port + ".");
     //http://localhost:3000
 });
