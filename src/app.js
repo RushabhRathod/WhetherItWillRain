@@ -4,6 +4,7 @@ const path = require("path");
 const express = require("express"); 
 const hbs = require("hbs");
 const app = express();
+const port = process.env.PORT || 3000;
 const getCoordinates = require("./utils/getCoordinates");
 const getWeather = require("./utils/getWeather");
 
@@ -103,7 +104,7 @@ app.use((req, res) => {
 //     res.status(404).send("404");
 // });
 
-app.listen(3000, () => {
-    console.log("Server is lisiting at port 3000.");
+app.listen(port, () => {
+    console.log("Server is lisiting at port " + port +.");
     //http://localhost:3000
 });
