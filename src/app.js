@@ -75,7 +75,7 @@ app.get("/product", (req,res) => {
 app.get("/about", (req, res) => {
     res.render("about", {
         title: "About",
-        name: "Rusahbh Rathod"
+        name: "Rusahbh and Parthiv"
     });
 });
 
@@ -83,7 +83,7 @@ app.get("/help", (req, res) => {
     res.render("help", {
         title: "Help",
         message: "This is the help page",
-        name: "Rushabh"
+        name: "Rushabh and Parthiv"
     });
 });
 
